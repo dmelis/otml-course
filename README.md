@@ -6,7 +6,7 @@ The visual identity (dark canvas, point-cloud wordmark, muted amber/salmon accen
 
 ## Status
 
-**Private draft.** Every page carries `<meta name="robots" content="noindex,nofollow">`. Remove those tags site-wide before the public announce.
+**Public.** Site lives at <https://dmelis.github.io/otml-course/>.
 
 ## Structure
 
