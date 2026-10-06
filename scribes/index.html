@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Scribe notes · CS 2840 — Optimal Transport for Machine Learning</title>
+<link rel="stylesheet" href="../assets/site/style.css">
+</head>
+<body>
+<div class="doc">
+  <div class="crumb"><a href="../">← CS 2840</a> &nbsp;·&nbsp; Scribe notes</div>
+
+  <h1>Scribe notes</h1>
+  <p class="lede">
+    Lecture-by-lecture notes compiled and edited by Fall '25 CS 2840 students.
+    These complement the slides and are especially useful for guest lectures.
+  </p>
+
+  <h2>Notes by lecture</h2>
+  <ul id="scribe-list"></ul>
+</div>
+
+<script src="../assets/site/lectures.js"></script>
+<script>
+  (function(){
+    const ul = document.getElementById('scribe-list');
+    const scribeAvailable = n => n >= 3 && n <= 20;
+    for (const L of window.CS2840_LECTURES){
+      if (!scribeAvailable(L.n)) continue;
+      const li = document.createElement('li');
+      const label = `Lecture ${L.n}${L.guest ? ' — ' + L.title + ' (guest: ' + L.guest + ')' : ' — ' + L.title}`;
+      li.innerHTML = `<a class="link" href="../assets/scribes/Lecture_${L.n}.pdf" target="_blank" rel="noopener">${label} ↗</a>`;
+      ul.appendChild(li);
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>CS 2840 — Optimal Transport for Machine Learning · Harvard · Fall 2025</title>
+<meta name="description" content="Lecture materials for CS 2840: Computational Optimal Transport for Machine Learning. Harvard SEAS, Fall 2025, taught by David Alvarez-Melis.">
+<link rel="stylesheet" href="assets/site/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  Harvard SEAS <span class="dot"></span> Fall 2025 <span class="dot"></span> CS 2840
+</div>
+
+<header class="hero">
+  <div class="hero__cloud" aria-label="CS 2840 — point-cloud wordmark">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  </div>
+
+  <h1 class="hero__title">Optimal Transport <em>for</em> Machine&nbsp;Learning</h1>
+
+  <p class="hero__sub">
+    A graduate course on the mathematics and computation of optimal transport,
+    and its use across modern machine learning — from entropic regularization
+    and dynamic formulations to generative modeling, domain adaptation, and beyond.
+  </p>
+
+  <div class="hero__scroll">Scroll</div>
+</header>
+
+<section class="nav" aria-labelledby="nav-h">
+  <div class="nav__eyebrow">
+    <span>Lectures</span>
+    <span>20 lectures · four parts</span>
+  </div>
+  <h2 id="nav-h" class="nav__h">The course, along a geodesic.</h2>
+  <p class="nav__sub">Hover a node for the lecture title; click to open its slides.</p>
+
+  <div id="geodesic" class="geodesic"></div>
+
+  <div class="legend" aria-hidden="true">
+    <span>
+      <svg class="sw" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+        <circle cx="6" cy="6" r="6" fill="#fff"/>
+      </svg>
+      Lecture by DAM
+    </span>
+    <span>
+      <svg class="sw" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true">
+        <circle cx="6" cy="6" r="5" fill="none" stroke="#fff" stroke-width="1.4"/>
+      </svg>
+      Guest lecture
+    </span>
+  </div>
+
+  <!-- Fallback stacked list (mobile, no-JS) -->
+  <div class="lecture-list" id="lecture-list">
+    <ol id="ll-items"></ol>
+  </div>
+</section>
+
+<section class="quicklinks" aria-label="Course materials">
+  <a href="syllabus/">
+    <span class="ql-eyebrow">01 · Overview</span>
+    <div class="ql-title">Syllabus</div>
+    <div class="ql-desc">Full course description, prerequisites, grading, and the Fall '25 PDF.</div>
+  </a>
+  <a href="readings/">
+    <span class="ql-eyebrow">02 · References</span>
+    <div class="ql-title">Readings</div>
+    <div class="ql-desc">Textbooks, tutorials, and per-topic reading lists.</div>
+  </a>
+  <a href="scribes/">
+    <span class="ql-eyebrow">03 · Notes</span>
+    <div class="ql-title">Scribe notes</div>
+    <div class="ql-desc">Lecture-by-lecture notes compiled by the Fall '25 students.</div>
+  </a>
+</section>
+
+<footer class="footer">
+  <div>CS 2840 · Harvard SEAS · Fall '25</div>
+  <div>Taught by <a href="https://dmelis.github.io">David Alvarez-Melis</a></div>
+</footer>
+
+<script src="assets/site/lectures.js"></script>
+<script src="assets/site/hero.js"></script>
+<script src="assets/site/geodesic.js"></script>
+<script>
+  // Populate the mobile/no-JS fallback list
+  (function(){
+    const ol = document.getElementById('ll-items');
+    if (!ol || !window.CS2840_LECTURES) return;
+    for (const L of window.CS2840_LECTURES){
+      const li = document.createElement('li');
+      const num = String(L.n).padStart(2,'0');
+      const guest = L.guest ? ` <em>· guest: ${L.guest}</em>` : '';
+      li.innerHTML = `<a href="lectures/${num}/">
+        <span class="ll-num">L${num}</span>
+        <span class="ll-title">${L.title}${guest}</span>
+        <span class="ll-date">${L.date}</span>
+      </a>`;
+      ol.appendChild(li);
+    }
+  })();
+</script>
+</body>
+</html>
